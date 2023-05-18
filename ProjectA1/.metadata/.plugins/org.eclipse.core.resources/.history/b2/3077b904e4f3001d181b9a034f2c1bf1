@@ -1,0 +1,24 @@
+package elevador;
+
+public class Elevador {
+	int andar;
+	int maxAndar;
+	int pessoasNoElevador;
+	int capacidadeDePessoas;
+
+	public void Elevador(int capacidade, int maxAndar) {
+		
+	}
+	public void Entra() {
+		
+	}
+	public void Sai() {
+		
+	}
+	public void Desce() {
+		
+	}
+	public void Sobe() {
+		
+	}
+}

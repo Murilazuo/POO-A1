@@ -1,0 +1,17 @@
+package artista;
+
+import java.util.ArrayList;
+
+public class Artista {
+	String name;
+	String[] albuns;
+
+	public Artista(String name) {
+		this.name = name;
+	}
+	
+	@Override
+	public String toString() {
+		return name;
+	}
+}

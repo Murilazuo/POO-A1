@@ -1,0 +1,67 @@
+package aluno;
+
+import java.util.Scanner;
+
+public class Aluno {
+	/*
+	 TODO Fazer um programa para ler o nome de um aluno e as três notas que ele
+obteve nos três trimestres do ano (primeiro trimestre vale 30, o segundo e o
+terceiro valem 35 cada). Ao final, mostrar qual a nota final do aluno no ano.
+Dizer também se o aluno está aprovado (PASS) ou não (FAILED)e, em caso
+negativo, quantos pontos faltam para o aluno obter o mínimo para ser
+aprovado (que 60% das notas). Você deve criar uma classe Studant para
+resolver este problema.
+	  
+	 */
+	public static void main(String[] args) {
+		
+	}
+	
+	int[] notas;
+	String nome;
+	
+	public Aluno(String nome, int[] notas) {
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.print("Indique o nome do aluno");
+		this.nome = nome;
+		
+		System.out.print("Indique as notas do aluno:");
+		this.notas = new int[3];
+		
+		for(int i = 0; i < 3;i++) {
+			System.out.print("Nota " + i);
+			this.notas[i] = notas[i];
+		}
+	}
+
+	int TotalDePontos() {
+		int total = 0;
+		for(int i = 0; i < 3;i++) {
+			total += notas[i];
+		}
+		return total;
+	}
+	
+	boolean AlunoPassou() {
+		return TotalDePontos() >= 60;
+	}
+	String AlunoPassouString() {
+		return AlunoPassou() ? "passou" : "rodou";
+	}
+	
+	
+	@Override
+	public String toString() {
+		String result="Aluno " + nome + "\n";
+		for(int i = 0;i < 3;i++) {
+			result += "Nota Semestre " + (i+1) + ": " + notas[i]+ "\n";
+		}
+		result += "Aluno " + AlunoPassouString() + (AlunoPassou() ? "" : ", restaram " 
+				+ (60- TotalDePontos()) + " pontos para passar.\n");
+		
+		return result;
+	}
+	
+	
+}

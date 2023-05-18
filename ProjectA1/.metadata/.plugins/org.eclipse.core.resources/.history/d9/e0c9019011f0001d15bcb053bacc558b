@@ -1,0 +1,30 @@
+
+public class Agenda {
+	
+	
+	
+	public Agenda() {
+		
+	}
+	
+	
+	void armazenarPessoa(String nome, int idade, float altura) {
+		
+	}
+	
+	void removerPessoa(String nome) {
+		
+	}
+	
+	int buscaPessoa(String nome) { //informe em que posição da agenda está a pessoa 
+		return 0;
+	}
+	
+	void imprimeAgenda() { //informe os dados de todas as pessoas da agenda 
+		
+	}
+	
+	void imprimePessoa(int index) { //imprime os dados da pessoa que está na posição “i”da agenda. 
+		
+	}
+}

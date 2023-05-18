@@ -1,0 +1,26 @@
+
+public class Pessoa {
+	String nome;
+	int idade;
+	float altura;
+	
+	public String getNome() {
+		return nome;
+	}
+
+	public int getIdade() {
+		return idade;
+	}
+
+
+	public float getAltura() {
+		return altura;
+	}
+
+	@Override
+	public String toString() {
+		return "Pessoa [nome=" + nome + ", idade=" + idade + ", altura=" + altura + "]";
+	}
+	
+	
+}
