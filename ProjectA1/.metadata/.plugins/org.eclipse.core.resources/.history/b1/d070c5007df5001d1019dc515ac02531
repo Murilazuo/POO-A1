@@ -1,0 +1,68 @@
+package artista;
+
+import java.util.Scanner;
+
+public class Program {
+
+	public static void main(String[] args) {
+		Menu();
+	}
+	
+	static void Menu() {
+		int action = 0;
+		
+		BancoDeDadosArtistas banco = new BancoDeDadosArtistas();
+		Scanner sc = new Scanner(System.in);
+		do {
+			System.out.println("Indique sua ação:");
+			System.out.println("0 - Sair");
+			System.out.println("1 - Cadastrar Artista");
+			System.out.println("2 - Imprimir Nome de Artistas");
+			System.out.println("3 - Quantidade de Artistas");
+			System.out.println("4 - Apagar Artistas");
+			System.out.println("5 - Total de Artistas e albuns");
+			System.out.println("6 - Buscar Artista");
+			
+			action = sc.nextInt();
+			
+			switch(action) {
+			case 0:
+				System.out.println("Saindo");
+				break;
+			case 1:
+				Artista artista = new Artista(sc);
+				banco.AddArtista(artista);
+				System.out.println("Artista " + artista.getName() + " foi adicionado");
+				break;
+			case 2:
+				banco.IprimitNomeArtistas();
+				break;
+			case 3:
+				System.out.println("Artistas totais " + banco.TotalDeAtistas());
+				break;
+			case 4:
+				banco.ClearArtista();
+				System.out.println("Lista de artistas apagado");
+				break;
+			case 5:
+				banco.IprimitArtistas();
+				break;
+			case 6:
+				System.out.println("Indique o nome do artista que deseja buscar:");
+				Artista artistaParaEncontrar = banco.AcharArtista(sc.next());
+				
+				if(artistaParaEncontrar != null) {
+					System.out.print(artistaParaEncontrar.toString());
+				}else {
+					System.out.println("Artista não encontrado");
+				}
+				break;
+			default:
+				System.out.println("Ação não encontrada");
+				break;
+			}
+		}while(action != 0);
+		
+		sc.close();
+	}
+}

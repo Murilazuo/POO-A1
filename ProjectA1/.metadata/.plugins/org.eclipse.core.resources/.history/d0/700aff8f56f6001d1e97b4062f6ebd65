@@ -1,0 +1,55 @@
+package pessoas;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Program {
+
+	static ArrayList<Pessoa> pessoas;
+	static Scanner sc;
+	public static void main(String[] args) {
+		sc = new Scanner(System.in);
+	
+		int action = 0;
+		do {
+			System.out.println("Indique a ação");
+			System.out.println("0 - Sair");
+			System.out.println("1 - Adicionar Pessoas");
+			System.out.println("2 - Imprimir Pessoas");
+			action = sc.nextInt();
+			switch(action) {
+			case 1: AddEditora(); break;
+			case 2: ImprimirArrayList(pessoas); break;
+			default: System.out.println("Ação não encontrada, digite novamente");
+				break;
+			}
+		}while(action != 0);
+		
+		sc.close();
+	}
+	
+	static void AddEditora() {
+		
+		String nome;
+		int idade ;
+		char sexo;
+		Endereco endereco;
+		
+		
+		System.out.println("Indique o nome da editora:");
+		newEditora.setNome(sc.next());
+		
+		System.out.println("Indique o email da editora:");
+		newEditora.setEmail(sc.next());
+		
+		Pessoa newPessoa = new Pessoa(nome, idade, sexo, endereco);
+		pessoas.add(newPessoa);
+		
+	}
+	
+	static void ImprimirArrayList(ArrayList arrayList) {
+		for(Object obj : arrayList) {
+			System.out.println(obj.toString());
+		}
+	}
+}

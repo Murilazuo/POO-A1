@@ -1,0 +1,32 @@
+package artista;
+
+import java.util.ArrayList;
+
+public class BancoDeDadosArtistas {
+
+	
+	
+	ArrayList<Artista> listaArtista;
+	
+	Artista AcharArtista(String nome) {
+		for(Artista artista : listaArtista) {
+			if(artista.name == nome) return artista;
+		}
+		return null;
+	}
+	
+	void AddArtista(Artista artista) {
+		listaArtista.add(artista);
+	}
+	void ClearArtista() {	
+		listaArtista.clear();
+	}
+	int TotalDeAtistas() {
+		return listaArtista.size();
+	}	
+	void IprimitArtistas() {
+		for(Artista artista : listaArtista) {
+			System.out.println(artista.toString());
+		}
+	}
+}

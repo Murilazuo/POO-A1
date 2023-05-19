@@ -1,0 +1,33 @@
+package editora;
+
+import java.util.ArrayList;
+
+public class Main {
+	static ArrayList<Editora> editoras;
+	static ArrayList<Livro> livros;
+	
+	public static void main(String[] args) {
+		
+		editoras = new ArrayList<Editora>();
+		livros = new ArrayList<Livro>();
+		
+		
+		
+	}
+	
+	static void AddEditora() {
+		Editora newEditora = new Editora();
+		
+		editoras.add(newEditora);
+		
+	}
+	
+	static void AddLivro(int id, Livro livro) {
+		if(id < livros.size()) {
+			livros.add(livro);
+			livro.setIdEditora(id);
+		}else {
+			System.out.println("Id de editora não encontrado");
+		}
+	}
+}

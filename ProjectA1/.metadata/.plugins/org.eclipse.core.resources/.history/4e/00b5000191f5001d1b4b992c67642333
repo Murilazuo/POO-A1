@@ -1,0 +1,44 @@
+package editora;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Main {
+	static ArrayList<Editora> editoras;
+	static ArrayList<Livro> livros;
+	static Scanner sc;
+	public static void main(String[] args) {
+		sc = new Scanner(System.in);
+		
+		editoras = new ArrayList<Editora>();
+		livros = new ArrayList<Livro>();
+		
+	}
+	
+	static void AddEditora() {
+		Editora newEditora = new Editora();
+		
+		System.out.println("Indique o email da editora:");
+		newEditora.setEmail(sc.next());
+		
+		System.out.println("Indique o email da editora:");
+		newEditora.setEmail(sc.next());
+		
+		System.out.println("Indique o email da editora:");
+		newEditora.setNome(sc.next());
+		
+		editoras.add(newEditora);
+		
+		newEditora.setId(editoras.indexOf(newEditora));
+		
+	}
+	
+	static void AddLivro(int id, Livro livro) {
+		if(id < livros.size()) {
+			livros.add(livro);
+			livro.setIdEditora(id);
+		}else {
+			System.out.println("Id de editora não encontrado");
+		}
+	}
+}

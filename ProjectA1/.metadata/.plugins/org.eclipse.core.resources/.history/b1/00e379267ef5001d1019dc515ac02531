@@ -1,0 +1,42 @@
+package artista;
+
+import java.util.ArrayList;
+
+public class BancoDeDadosArtistas {
+	ArrayList<Artista> listaArtista;
+	
+	public BancoDeDadosArtistas() {
+		listaArtista = new ArrayList<Artista>();
+	}
+	
+	Artista AcharArtista(String nome) {
+		for(int i = 0 ; i < listaArtista.size();i++) {
+			System.out.println(listaArtista.get(i).getName());
+			System.out.println(nome);
+			if(listaArtista.get(i).getName() == nome) return listaArtista.get(i);
+		}
+		return null;
+	}
+	
+	void AddArtista(Artista artista) {
+		listaArtista.add(artista);
+	}
+	void ClearArtista() {	
+		listaArtista.clear();
+	}
+	int TotalDeAtistas() {
+		return listaArtista.size();
+	}	
+	void IprimitArtistas() {
+		System.out.println("Artistas:");
+		for(Artista artista : listaArtista) {
+			System.out.println(artista.toString());
+		}
+	}
+	void IprimitNomeArtistas() {
+		System.out.println("Artistas:");
+		for(Artista artista : listaArtista) {
+			System.out.println(artista.getName());
+		}
+	}
+}

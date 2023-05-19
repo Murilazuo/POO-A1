@@ -1,0 +1,38 @@
+package artista;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Artista {
+	String name;
+	ArrayList<String> albuns;
+
+	public Artista() {
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.println("Indique o nome do artista");
+		name = sc.next();
+		
+		int action = 0;
+		
+		do {
+			System.out.println("Indique o album do Artista");
+			
+		}while (action == 0);
+		
+		
+		sc.close();
+	}
+	
+	@Override
+	public String toString() {
+		String result = "";
+		result += "Nome " + name;
+		
+		for(int i = 0; i < albuns.size();i++) {
+			
+		}
+		
+		return result;
+	}
+}

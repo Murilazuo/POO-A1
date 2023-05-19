@@ -1,0 +1,29 @@
+package editora;
+
+import java.util.ArrayList;
+
+public class Main {
+
+	public static void main(String[] args) {
+		ArrayList<Editora> editoras;
+		ArrayList<Livro> livros;
+		
+		editoras = new ArrayList<Editora>();
+		livros = new ArrayList<Livro>();
+		
+		
+		
+		
+		
+	}
+	
+	static void AddEditora() {
+		Editora newEditora = new Editora();
+		
+		editoras.add(newEditora);
+		
+	}
+	static void AddLivro() {
+		
+	}
+}
